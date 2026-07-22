@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Missão 2 Concluída</title>
+    <style>
+        body { background: #1E4D8C; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; }
+        .container { max-width: 1000px; margin: auto; }
+        
+        /* Cabeçalho com logos */
+        .header { background: white; padding: 20px; border-radius: 20px; margin-bottom: 20px; }
+        .header-top { display: flex; justify-content: space-between; align-items: center; }
+        .logo { height: 80px; }
+        .titulo-container { text-align: center; flex-grow: 1; }
+        .barra-progresso { background: #27ae60; color: white; padding: 10px; border-radius: 10px; font-weight: bold; text-align: center; margin-top: 15px; }
+        
+        /* Card central */
+        .card { background: white; padding: 40px; border-radius: 20px; display: grid; grid-template-columns: 1fr 350px; gap: 40px; align-items: center; }
+        .card > div:first-child {
+        text-align: justify;
+        line-height: 1.6;
+    }
+		h1 { color: #1E4D8C; margin-top: 0; }
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 15px; font-weight: bold; }
+        li::before { content: "✔"; color: #27ae60; margin-right: 10px; }
+        
+        .imagem-rota { width: 100%; border-radius: 15px; }
+        
+        /* Botão posicionado dentro do card */
+        .btn-prosseguir { display: inline-block; padding: 15px 30px; background: #27ae60; color: white; border-radius: 10px; text-decoration: none; font-weight: bold; margin-top: 20px; transition: 0.3s; }
+        .btn-prosseguir:hover { background: #219150; transform: scale(1.02); }
+    </style>
+</head>
+<body>
+<div style="text-align: center; margin-top: 15px; margin-bottom: 15px;">
+       <a href="miss%C3%A3o2.html" style="text-decoration: none; background-color: #343a40; color: #ffffff; padding: 5px 15px; border-radius: 4px; font-size: 12px; border: 1px solid white;">← Voltar para a Missão 2</a>
+    </div>
+<div class="container">
+    <!-- Cabeçalho com Logos -->
+    <div class="header">
+        <div class="header-top">
+            <img src="../05. Imagens/logos/logo-escola.jpeg" class="logo">
+            <div class="titulo-container">
+                <h1 style="margin: 0;">Parabéns!</h1>
+            </div>
+            <img src="../05. Imagens/logos/logojornada.jpeg" class="logo">
+        </div>
+        <div class="barra-progresso">100% CONCLUÍDO</div>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="card">
+        <div>
+            <h1>Missão 2 finalizada</h1>
+            <p>Você já tem uma <strong>rota para conduzir as aprendizagens do 3º bimestre</strong>:</p>
+            <ul>
+                <li>Planejamento de aulas do 3º bimestre adaptado ao contexto das turmas</li>
+                <li>Momentos de retomada definidos</li>
+                <li>Materiais e atividades para retomada e adaptação mapeados</li>
+            </ul>
+            <!-- Botão agora dentro do card, alinhado ao texto -->
+            <a href="missão3.html" class="btn-prosseguir">INICIAR MISSÃO 3 ➔</a>
+        </div>
+        <div>
+            <img src="../05. Imagens/ilustrações/rota.jpg" class="imagem-rota" alt="Rota do 3º bimestre">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

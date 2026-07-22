@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jornada da Aprendizagem 2026</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Tahoma,sans-serif;
+}
+
+body{
+    background:#1E4D8C;
+    color:white;
+    overflow:hidden;
+}
+
+.container{
+    width:95%;
+    max-width:1200px;
+    margin:25px auto 0;
+    padding:8px;
+}
+
+/*=========================
+CABEÇALHO
+=========================*/
+
+.topo{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    margin-bottom:10px;
+}
+
+.logo-escola img{
+    height:110px;
+}
+
+.logo-jornada{
+    text-align:right;
+}
+
+.logo-jornada img{
+    width:170px;
+    height:110px;
+}
+
+/*=========================
+TÍTULO
+=========================*/
+
+.titulo{
+    flex:1;
+    text-align:center;
+}
+
+.titulo h1{
+    font-size:2.2rem;
+    font-weight:700;
+}
+
+.titulo p{
+    margin-top:8px;
+    font-size:1.15rem;
+}
+
+/*=========================
+CAIXAS
+=========================*/
+
+.apresentacao,
+.resultado{
+
+    background:#fff;
+    color:#333;
+    border-radius:18px;
+    padding:18px;
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+
+}
+
+.apresentacao{
+    margin-bottom:12px;
+}
+
+.apresentacao h2,
+.resultado h2{
+
+    color:#1E4D8C;
+    margin-bottom:12px;
+
+}
+
+.apresentacao p{
+
+    line-height:1.7;
+
+}
+
+/*=========================
+MISSÕES
+=========================*/
+
+.missoes-titulo{
+
+    text-align:center;
+    margin-bottom:10px;
+
+}
+
+.grid{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-bottom:12px;
+
+}
+
+.card{
+
+    background:white;
+    color:#333;
+    border-radius:18px;
+    padding:15px;
+    box-shadow:0 5px 12px rgba(0,0,0,.15);
+
+}
+
+.card h3{
+
+    margin-bottom:10px;
+    color:#222;
+
+}
+
+.card p{
+
+    line-height:1.5;
+
+}
+
+.azul{
+      border-top:8px solid #3B82F6;
+}
+
+.laranja{
+    border-top:7px solid #F28C28;
+}
+
+.roxo{
+    border-top:7px solid #7E57C2;
+}
+
+/*=========================
+BOTÃO
+=========================*/
+
+.botao{
+
+    text-align:center;
+    margin:10px 0;
+
+}
+
+.botao a{
+
+    display:inline-block;
+    background:#F28C28;
+    color:white;
+    text-decoration:none;
+    font-size:1.15rem;
+    font-weight:bold;
+    padding:16px 50px;
+    border-radius:35px;
+    transition:.3s;
+
+}
+
+.botao a:hover{
+
+    background:#df7b1b;
+    transform:translateY(-3px);
+
+}
+
+/*=========================
+RESPONSIVO
+=========================*/
+
+@media(max-width:900px){
+
+.topo{
+
+flex-direction:column;
+align-items:center;
+
+}
+
+.logo-escola img{
+height:85px;
+}
+
+.logo-jornada{
+text-align:center;
+}
+
+.logo-jornada img{
+width:180px;
+}
+
+.titulo h1{
+font-size:2rem;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="topo">
+
+        <div class="logo-escola">
+            <img src="../05. Imagens/logos/logo-escola.jpeg" alt="Logo da Escola">
+        </div>
+
+        <div class="titulo">
+         <h1 id="boasVindas">Jornada da Aprendizagem 2026</h1>   
+            <p>Plataforma Formativa para o Replanejamento Escolar</p>
+        </div>
+
+        <div class="logo-jornada">
+          <img src="../05. Imagens/logos/logojornada.jpeg" alt="Logo Jornada da Aprendizagem"> 
+        </div>
+
+    </div>
+
+    <div class="apresentacao">
+
+        <h2>APRESENTAÇÃO</h2>
+
+        <p>
+            Bem-vindo(a) à Jornada da Aprendizagem 2026! Este ambiente foi desenvolvido para apoiar o Replanejamento Escolar por meio de um percurso formativo organizado em três missões. Ao longo desta jornada você analisará as evidências de aprendizagem, planejará o terceiro bimestre e definirá estratégias para acompanhar o desenvolvimento dos estudantes. Cada etapa foi pensada para transformar dados em decisões pedagógicas consistentes.
+        </p>
+	<a href="menu_fichas.html" style="display: block; margin-top: 15px; color: #2980b9; font-weight: bold; text-decoration: none;">
+        👉 CLIQUE AQUI PARA INICIAR A JORNADA
+    </a>
+
+    </div>
+
+    <div class="missoes-titulo">
+
+        <h2>Sua Jornada será composta por três missões</h2>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="card azul">
+
+            <h3>🎒 Arrumando a Mochila</h3>
+
+            <p>
+                Organização dos insumos pedagógicos e análise das evidências de aprendizagem.
+            </p>
+
+        </div>
+
+        <div class="card laranja">
+
+            <h3>🗺️ Traçando a Rota</h3>
+
+            <p>
+                Planejamento do percurso de aprendizagem do terceiro bimestre.
+            </p>
+
+        </div>
+
+        <div class="card roxo">
+
+            <h3>🚶 Pontos de Parada</h3>
+
+            <p>
+                Acompanhamento, monitoramento e avaliação contínua das aprendizagens.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="botao">
+
+        <a href="missão1.html">
+            🚀 INICIAR A MISSÃO 1
+        </a>
+
+    </div>
+
+</div>
+<script>
+    // Recupera o nome salvo no navegador
+    const nomeLogado = localStorage.getItem("nomeProfessor");
+    
+    // Verifica se temos um nome e se estamos na página correta
+    if (nomeLogado) {
+        // Se existir o nome, atualiza o título
+        const titulo = document.getElementById("boasVindas");
+        if(titulo) {
+            titulo.innerText = "Bem-vindo(a), " + nomeLogado + "!";
+        }
+    } else {
+        // Se NÃO existir, redireciona para o login que está na pasta raiz
+        // O "../" sobe uma pasta para encontrar o index.html
+        window.location.href = "../index.html"; 
+    }
+</script>
+
+</body>
+</html>

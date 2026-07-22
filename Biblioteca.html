@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Biblioteca da Jornada</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#1E4D8C;
+    height:100vh;
+    overflow:hidden;
+}
+
+.container{
+    width:95%;
+    max-width:1200px;
+    margin:auto;
+    padding:30px;
+}
+
+.topo{
+    text-align:center;
+    color:white;
+    margin-bottom:25px;
+}
+
+.topo h1{
+    font-size:2.8rem;
+    margin-bottom:10px;
+}
+
+.topo p{
+    font-size:1.1rem;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card h2{
+    margin-bottom:10px;
+	font-size:1.4rem;
+}
+
+.card p{
+    color:#555;
+    line-height:1.4;
+    margin-bottom:15px;
+	font-size:0.95rem;
+}
+
+.botao{
+    display:inline-block;
+    padding:10px 22px;
+    border-radius:25px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+}
+
+.azul{
+    background:#1E4D8C;
+}
+
+.laranja{
+    background:#F28C28;
+}
+
+.roxo{
+    background:#7E57C2;
+}
+
+.verde{
+    background:#43A047;
+}
+
+.voltar{
+    text-align:center;
+    margin-top:30px;
+}
+
+.voltar a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+.btn-retorno{
+    display:inline-block;
+    margin-top:25px;
+    background:white;
+    color:#1E4D8C;
+    padding:10px 20px;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.btn-retorno:hover{
+    background:#f0f0f0;
+}
+</style>
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+   <div class="topo" style="display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
+    <img src="../05. Imagens/logos/logo-escola.jpeg" style="height: 100px;">
+    
+    <div style="text-align: center;">
+        <h1 style="margin: 0; font-size: 2.8rem;">📚 Biblioteca da Jornada</h1>
+        <p style="font-size: 1.2rem;">Central de Recursos da Jornada da Aprendizagem</p>
+       <div style="margin-top: 15px;">
+    <!-- Botão de Início -->
+    
+    
+    <!-- Botão de Retorno (o que você queria) -->
+   <a href="javascript:history.back()" style="display: inline-block; padding: 8px 15px; border-radius: 4px; border: 1px solid white; background: #c82333; color: white; text-decoration: none; cursor: pointer;">← Voltar</a> 
+</div>
+    </div>
+
+    <img src="../05. Imagens/logos/logojornada.jpeg" style="height: 100px;">
+</div>
+
+    <div class="grid">
+
+       
+
+        <div class="card">
+            <h2>📚 Guias do Currículo Priorizado e Escopos</h2>
+            <p>
+                Guias, áreas do conhecimento, itinerários formativos e documentos orientadores.
+            </p>
+
+            <a href="curriculo.html" class="botao laranja">
+                ACESSAR
+            </a>
+        </div>
+
+        <div class="card">
+            <h2>📊 Evidências de Aprendizagem</h2>
+            <p>
+                Consolidado da Prova Paulista e Indicadores Internos.
+            </p>
+
+           <a href="dados_aprendizagem.html" class="botao roxo">ACESSAR</a> 
+                
+            </a>
+        </div>
+
+        <div class="card">
+            <h2>📄 Documentação do Replanejamento</h2>
+            <p>
+                Pautas do Replanejamento
+            </p>
+
+            <a href="documentacao.html" class="botao verde">
+                ACESSAR
+            </a>
+        </div>
+<!-- Novo Card Banco de Dados -->
+        <!-- Novo Card Banco de Dados -->
+     <div class="card">
+            <h2>💾 Banco de Dados</h2>
+            <p>
+                Consulte aqui seus registros e o planejamento realizado.
+            </p>
+            <button onclick="verificarAcesso()" class="botao azul" style="border: none; cursor: pointer;">
+                CONSULTAR
+            </button>
+        </div> <!-- Fim do card -->
+    </div> <!-- Fim da grid -->
+
+  <script>
+        function verificarAcesso() {
+            window.location.href = "banco_de_dados.html";
+        }
+    </script>
+</body>
+</html>
