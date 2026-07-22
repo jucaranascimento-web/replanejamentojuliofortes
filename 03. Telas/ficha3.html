@@ -88,6 +88,7 @@ textarea{
     padding:18px;
     cursor:pointer;
     font-size:16px;
+    border-radius:4px;
 }
 
 .botao-continuar{
@@ -98,6 +99,7 @@ textarea{
     padding:18px;
     cursor:pointer;
     font-size:16px;
+    border-radius:4px;
 }
 
 .botao-voltar {
@@ -162,7 +164,6 @@ Ao longo desta ficha, reflita sobre o potencial pedagógico de cada recurso, con
 
 <select id="prof">
 <option value="">Professor(a)</option>
-
 <option>Caroline</option>
 <option>Dante</option>
 <option>Débora</option>
@@ -175,12 +176,12 @@ Ao longo desta ficha, reflita sobre o potencial pedagógico de cada recurso, con
 <option>Regiane</option>
 <option>Rejane</option>
 <option>Sabrina</option>
-
+<option>Emerson</option>
+<option>Flávio</option>
 </select>
 
 <select id="comp">
 <option value="">Componente Curricular</option>
-
 <option>Arte</option>
 <option>Biologia</option>
 <option>Educação Física</option>
@@ -193,19 +194,26 @@ Ao longo desta ficha, reflita sobre o potencial pedagógico de cada recurso, con
 <option>Matemática</option>
 <option>Química</option>
 <option>Sociologia</option>
-
+<option>Matemática Aplicada a Administração</option>
+<option>Introdução a Administração e Legislação de Pessoas</option>
+<option>Carreira e Competencia ao Mercado de Trabalho</option>
+<option>Marketing Estratégico</option>
+<option>Comunicação Empresarial</option>
+<option>Gestão Financeira e Contabilidade</option>
+<option>Projeto Multidisciplinar</option>
+<option>Gestão de Operações</option>
+<option>Inovação e desenvolvimento de Negócios</option>
+<option>Liderança e Oratória</option>
 </select>
 
 <select id="turma">
 <option value="">Turma</option>
-
 <option>1ª A</option>
 <option>1ª B</option>
 <option>2ª A</option>
 <option>2ª B</option>
 <option>3ª A</option>
 <option>3ª B</option>
-
 </select>
 
 </div>
@@ -277,7 +285,6 @@ Justifique sua análise considerando as possibilidades pedagógicas oferecidas p
 <td>Livro Didático (PNLD)</td>
 <td>
 <select id="pot_pnld">
-``
 <option>Selecione...</option>
 <option>Alto</option>
 <option>Médio</option>
@@ -298,7 +305,6 @@ Justifique sua análise considerando as possibilidades pedagógicas oferecidas p
 </select>
 </td>
 <td><textarea id="just_livro"></textarea></td>
-`
 </tr>
 
 <tr>
@@ -333,19 +339,14 @@ Justifique sua análise considerando as possibilidades pedagógicas oferecidas p
 <textarea id="adaptacoes"></textarea>
 
 <div class="botoes">
-
-
-
-<button class="botao-continuar" onclick="salvarENovaTurma()">
-Salvar e Nova Turma/Disciplina
-</button>
-
-<button class="botao-voltar" onclick="window.history.back()">⬅️ Voltar para a Missão 1</button>
+    <button class="botao-salvar" type="button" onclick="salvarRascunho()">💾 Salvar Rascunho</button>
+    <button class="botao-continuar" type="button" onclick="salvarENovaTurma()">Salvar e Nova Turma/Disciplina</button>
+    <button class="botao-voltar" type="button" onclick="window.location.href='missão1.html'">⬅️ Voltar para Missão 1</button>
+</div>
 
 </div>
 
 <script type="module">
-
 const firebaseConfig = {
   apiKey: "AIzaSyCFDIAUqMApNoAkzmx-lZFFnIXUVrFNaS0",
   authDomain: "jornada-da-aprendizagem.firebaseapp.com",
@@ -355,82 +356,123 @@ const firebaseConfig = {
   appId: "1:117617967349:web:d456181a57292a19a485bc",
   measurementId: "G-ZTSNG3CXBX"
 };
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 console.log("Firebase conectado");
-function salvarFicha() {
 
-
-addDoc(collection(db, "fichas"), {
- prof: document.getElementById("prof").value,
-comp: document.getElementById("comp").value,
-turma: document.getElementById("turma").value,
-pot_md: document.getElementById("pot_md").value,
-just_md: document.getElementById("just_md").value,
-
-pot_tarefa: document.getElementById("pot_tarefa").value,
-just_tarefa: document.getElementById("just_tarefa").value,
-
-pot_plat: document.getElementById("pot_plat").value,
-just_plat: document.getElementById("just_plat").value,
-
-pot_pnld: document.getElementById("pot_pnld").value,
-just_pnld: document.getElementById("just_pnld").value,
-
-pot_livro: document.getElementById("pot_livro").value,
-just_livro: document.getElementById("just_livro").value,
-
-pot_outros: document.getElementById("pot_outros").value,
-just_outros: document.getElementById("just_outros").value,
-
-rec_prioritarios: document.getElementById("rec_prioritarios").value,
-adaptacoes: document.getElementById("adaptacoes").value,
-
-ficha: "Ficha 3",
-
-data: new Date().toLocaleDateString("pt-BR"),
-hora: new Date().toLocaleTimeString("pt-BR")
-});
+async function salvarFicha() {
+  await addDoc(collection(db, "fichas"), {
+    prof: document.getElementById("prof").value,
+    comp: document.getElementById("comp").value,
+    turma: document.getElementById("turma").value,
+    pot_md: document.getElementById("pot_md").value,
+    just_md: document.getElementById("just_md").value,
+    pot_tarefa: document.getElementById("pot_tarefa").value,
+    just_tarefa: document.getElementById("just_tarefa").value,
+    pot_plat: document.getElementById("pot_plat").value,
+    just_plat: document.getElementById("just_plat").value,
+    pot_pnld: document.getElementById("pot_pnld").value,
+    just_pnld: document.getElementById("just_pnld").value,
+    pot_livro: document.getElementById("pot_livro").value,
+    just_livro: document.getElementById("just_livro").value,
+    pot_outros: document.getElementById("pot_outros").value,
+    just_outros: document.getElementById("just_outros").value,
+    rec_prioritarios: document.getElementById("rec_prioritarios").value,
+    adaptacoes: document.getElementById("adaptacoes").value,
+    ficha: "Ficha 3",
+    data: new Date().toLocaleDateString("pt-BR"),
+    hora: new Date().toLocaleTimeString("pt-BR")
+  });
 }
+
+function novaTurma() {
+  limparRascunho();
+
+  alert("✅ Ficha salva! Pronta para uma nova turma.");
+
+  document.getElementById("comp").value = "";
+  document.getElementById("turma").value = "";
+
+  document.getElementById("pot_md").selectedIndex = 0;
+  document.getElementById("pot_tarefa").selectedIndex = 0;
+  document.getElementById("pot_plat").selectedIndex = 0;
+  document.getElementById("pot_pnld").selectedIndex = 0;
+  document.getElementById("pot_livro").selectedIndex = 0;
+  document.getElementById("pot_outros").selectedIndex = 0;
+
+  document.getElementById("just_md").value = "";
+  document.getElementById("just_tarefa").value = "";
+  document.getElementById("just_plat").value = "";
+  document.getElementById("just_pnld").value = "";
+  document.getElementById("just_livro").value = "";
+  document.getElementById("just_outros").value = "";
+
+  document.getElementById("rec_prioritarios").value = "";
+  document.getElementById("adaptacoes").value = "";
+}
+
+async function salvarENovaTurma() {
+  await salvarFicha();
+  novaTurma();
+}
+
+async function salvarFichaComMensagem() {
+  await salvarFicha();
+  alert("✅ Ficha salva com sucesso! Você pode continuar editando depois.");
+}
+
+// --- LÓGICA DE RASCUNHO AUTOMÁTICO (LOCAL) ---
+const CHAVE_RASCUNHO = "ficha3_rascunho_local";
+
+function salvarRascunho() {
+  const dados = {};
+  document.querySelectorAll("input, textarea, select").forEach(campo => {
+    if (campo.id) {
+      if (campo.type === "checkbox") {
+        dados[campo.id] = campo.checked;
+      } else {
+        dados[campo.id] = campo.value;
+      }
+    }
+  });
+  localStorage.setItem(CHAVE_RASCUNHO, JSON.stringify(dados));
+  alert("💾 Rascunho salvo no seu computador!");
+}
+
+function carregarRascunho() {
+  const dadosSalvos = localStorage.getItem(CHAVE_RASCUNHO);
+  if (dadosSalvos) {
+    const dados = JSON.parse(dadosSalvos);
+    Object.keys(dados).forEach(id => {
+      const campo = document.getElementById(id);
+      if (campo) {
+        if (campo.type === "checkbox") {
+          campo.checked = dados[id];
+        } else {
+          campo.value = dados[id];
+        }
+      }
+    });
+  }
+}
+
+function limparRascunho() {
+  localStorage.removeItem(CHAVE_RASCUNHO);
+}
+
+// Torna as funções globais para os botões do HTML
 window.salvarFicha = salvarFicha;
 window.novaTurma = novaTurma;
 window.salvarENovaTurma = salvarENovaTurma;
-function novaTurma() {
+window.salvarFichaComMensagem = salvarFichaComMensagem;
+window.salvarRascunho = salvarRascunho;
 
-alert("✅ Ficha salva! Pronta para uma nova turma.");
-
-document.getElementById("comp").value = "";
-document.getElementById("turma").value = "";
-
-document.getElementById("pot_md").selectedIndex = 0;
-document.getElementById("pot_tarefa").selectedIndex = 0;
-document.getElementById("pot_plat").selectedIndex = 0;
-document.getElementById("pot_pnld").selectedIndex = 0;
-document.getElementById("pot_livro").selectedIndex = 0;
-document.getElementById("pot_outros").selectedIndex = 0;
-
-document.getElementById("just_md").value = "";
-document.getElementById("just_tarefa").value = "";
-document.getElementById("just_plat").value = "";
-document.getElementById("just_pnld").value = "";
-document.getElementById("just_livro").value = "";
-document.getElementById("just_outros").value = "";
-
-document.getElementById("rec_prioritarios").value = "";
-document.getElementById("adaptacoes").value = "";
-}
-async function salvarENovaTurma() {
-
-    await salvarFicha();
-
-    novaTurma();
-
-}
+// Carrega o rascunho automaticamente ao abrir
+window.addEventListener("DOMContentLoaded", carregarRascunho);
 </script>
-
-</div>
-
 </body>
 </html>

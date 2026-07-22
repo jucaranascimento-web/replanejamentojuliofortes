@@ -31,6 +31,7 @@ h2{
 }
 
 input[type=text],
+select,
 textarea{
     width:100%;
     padding:8px;
@@ -84,6 +85,7 @@ textarea{
     padding:18px;
     cursor:pointer;
     font-size:16px;
+    border-radius:4px;
 }
 
 .botao-continuar{
@@ -94,6 +96,7 @@ textarea{
     padding:18px;
     cursor:pointer;
     font-size:16px;
+    border-radius:4px;
 }
 
 .botao-voltar {
@@ -135,6 +138,7 @@ textarea{
 <p>
 <b>Importante:</b> Esta ficha é preenchida durante o replanejamento, antes da realização das ações pedagógicas. Seu foco não é analisar resultados alcançados, mas definir como as aprendizagens serão acompanhadas ao longo do bimestre.
 </p>
+
 <div class="orientacao">
 
 <b>Orientação ao professor:</b>
@@ -148,13 +152,13 @@ Utilize esta ficha para planejar como acompanhará os avanços dos estudantes ao
 Defina evidências, critérios, instrumentos e momentos de verificação que permitam identificar se os estudantes estão avançando nas aprendizagens planejadas.
 
 </div>
+
 <h2>Identificação</h2>
 
 <div class="identificacao">
 
 <select id="prof">
 <option value="">Professor(a)</option>
-
 <option>Caroline</option>
 <option>Dante</option>
 <option>Débora</option>
@@ -167,12 +171,12 @@ Defina evidências, critérios, instrumentos e momentos de verificação que per
 <option>Regiane</option>
 <option>Rejane</option>
 <option>Sabrina</option>
-
+<option>Emerson</option>
+<option>Flávio</option>
 </select>
 
 <select id="comp">
 <option value="">Componente Curricular</option>
-
 <option>Arte</option>
 <option>Biologia</option>
 <option>Educação Física</option>
@@ -185,19 +189,26 @@ Defina evidências, critérios, instrumentos e momentos de verificação que per
 <option>Matemática</option>
 <option>Química</option>
 <option>Sociologia</option>
-
+<option>Matemática Aplicada a Administração</option>
+<option>Introdução a Administração e Legislação de Pessoas</option>
+<option>Carreira e Competencia ao Mercado de Trabalho</option>
+<option>Marketing Estratégico</option>
+<option>Comunicação Empresarial</option>
+<option>Gestão Financeira e Contabilidade</option>
+<option>Projeto Multidisciplinar</option>
+<option>Gestão de Operações</option>
+<option>Inovação e desenvolvimento de Negócios</option>
+<option>Liderança e Oratória</option>
 </select>
 
 <select id="turma">
 <option value="">Turma</option>
-
 <option>1ª A</option>
 <option>1ª B</option>
 <option>2ª A</option>
 <option>2ª B</option>
 <option>3ª A</option>
 <option>3ª B</option>
-
 </select>
 
 </div>
@@ -208,9 +219,7 @@ Defina evidências, critérios, instrumentos e momentos de verificação que per
 type="button"
 onclick="carregarFicha4()"
 style="background:#16a085;color:white;border:none;padding:12px 20px;cursor:pointer;border-radius:4px;">
-
 Carregar dados da Ficha 4
-
 </button>
 
 </div>
@@ -218,19 +227,13 @@ Carregar dados da Ficha 4
 <h2>Aprendizagem Essencial</h2>
 
 <div class="bloco">
-
 <textarea id="ae" placeholder="(Recebida automaticamente da Ficha 4)"></textarea>
-
 </div>
-
-
 
 <h2>Conhecimento(s) prévio(s) retomado(s)</h2>
 
 <div class="bloco">
-
 <textarea id="retomada" placeholder="(Recebidos automaticamente da Ficha 4)"></textarea>
-
 </div>
 
 <h2>PARTE A – EVIDÊNCIAS DE APRENDIZAGEM</h2>
@@ -240,29 +243,17 @@ Carregar dados da Ficha 4
 </p>
 
 <div class="checkbox-group">
-
 <label><input type="checkbox" id="ev_texto"> Produções escritas</label>
-
 <label><input type="checkbox" id="ev_oral"> Produções orais</label>
-
 <label><input type="checkbox" id="ev_md"> Atividades do Material Digital</label>
-
 <label><input type="checkbox" id="ev_livro"> Atividades do Livro do Estudante</label>
-
 <label><input type="checkbox" id="ev_diag"> Avaliação diagnóstica</label>
-
 <label><input type="checkbox" id="ev_form"> Avaliação formativa</label>
-
 <label><input type="checkbox" id="ev_auto"> Autoavaliação</label>
-
 <label><input type="checkbox" id="ev_rubrica"> Rubricas</label>
-
 <label><input type="checkbox" id="ev_port"> Portfólio</label>
-
 <label><input type="checkbox" id="ev_obs"> Observação sistemática</label>
-
 <label><input type="checkbox" id="ev_outros"> Outros</label>
-
 </div>
 
 <br>
@@ -292,17 +283,11 @@ Carregar dados da Ficha 4
 </p>
 
 <div class="checkbox-group">
-
 <label><input type="checkbox" id="pv_inicio"> Início do bimestre</label>
-
 <label><input type="checkbox" id="pv_recomp"> Após as ações de recomposição</label>
-
 <label><input type="checkbox" id="pv_meio"> Meio do bimestre</label>
-
 <label><input type="checkbox" id="pv_final"> Final do bimestre</label>
-
 <label><input type="checkbox" id="pv_outros"> Outros</label>
-
 </div>
 
 <br>
@@ -310,12 +295,10 @@ Carregar dados da Ficha 4
 <input type="text" id="pv_outros_desc" placeholder="Caso tenha marcado 'Outros', especifique aqui">
 
 <div class="botoes">
-
-<button class="botao-continuar" onclick="salvarENovaTurma()">
-Salvar e Nova Turma/Disciplina
-</button>
-
-<a href="../03. Telas/missão3.html" class="botao-voltar" style="text-decoration: none; padding: 10px 20px; display: inline-block;">⬅️ Voltar para a Missão 3</a>
+    <button class="botao-salvar" type="button" onclick="salvarRascunho()">💾 Salvar Rascunho</button>
+    <button class="botao-continuar" type="button" onclick="salvarENovaTurma()">Salvar e Nova Turma/Disciplina</button>
+    <button class="botao-voltar" type="button" onclick="window.location.href='missão3.html'">⬅️ Voltar para a Missão 3</button>
+</div>
 
 </div>
 
@@ -329,140 +312,176 @@ const firebaseConfig = {
   appId: "1:117617967349:web:d456181a57292a19a485bc",
   measurementId: "G-ZTSNG3CXBX"
 };
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 import {
-getFirestore,
-collection,
-addDoc,
-query,
-where,
-getDocs
+  getFirestore,
+  collection,
+  addDoc,
+  query,
+  where,
+  getDocs
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+
 async function salvarFicha() {
+  await addDoc(collection(db, "fichas"), {
+    prof: document.getElementById("prof").value,
+    comp: document.getElementById("comp").value,
+    turma: document.getElementById("turma").value,
 
-await addDoc(collection(db, "fichas"), {
+    criterios: document.getElementById("criterios").value,
+    instrumentos: document.getElementById("instrumentos").value,
 
-prof: document.getElementById("prof").value,
-comp: document.getElementById("comp").value,
-turma: document.getElementById("turma").value,
+    ev_texto: document.getElementById("ev_texto").checked,
+    ev_oral: document.getElementById("ev_oral").checked,
+    ev_md: document.getElementById("ev_md").checked,
+    ev_livro: document.getElementById("ev_livro").checked,
+    ev_diag: document.getElementById("ev_diag").checked,
+    ev_form: document.getElementById("ev_form").checked,
+    ev_auto: document.getElementById("ev_auto").checked,
+    ev_rubrica: document.getElementById("ev_rubrica").checked,
+    ev_port: document.getElementById("ev_port").checked,
+    ev_obs: document.getElementById("ev_obs").checked,
+    ev_outros: document.getElementById("ev_outros").checked,
 
-criterios: document.getElementById("criterios").value,
-instrumentos: document.getElementById("instrumentos").value,
+    ev_outros_desc: document.getElementById("ev_outros_desc").value,
 
-ev_texto: document.getElementById("ev_texto").checked,
-ev_oral: document.getElementById("ev_oral").checked,
-ev_md: document.getElementById("ev_md").checked,
-ev_livro: document.getElementById("ev_livro").checked,
-ev_diag: document.getElementById("ev_diag").checked,
-ev_form: document.getElementById("ev_form").checked,
-ev_auto: document.getElementById("ev_auto").checked,
-ev_rubrica: document.getElementById("ev_rubrica").checked,
-ev_port: document.getElementById("ev_port").checked,
-ev_obs: document.getElementById("ev_obs").checked,
-ev_outros: document.getElementById("ev_outros").checked,
+    pv_inicio: document.getElementById("pv_inicio").checked,
+    pv_recomp: document.getElementById("pv_recomp").checked,
+    pv_meio: document.getElementById("pv_meio").checked,
+    pv_final: document.getElementById("pv_final").checked,
+    pv_outros: document.getElementById("pv_outros").checked,
 
-ev_outros_desc: document.getElementById("ev_outros_desc").value,
+    pv_outros_desc: document.getElementById("pv_outros_desc").value,
 
-pv_inicio: document.getElementById("pv_inicio").checked,
-pv_recomp: document.getElementById("pv_recomp").checked,
-pv_meio: document.getElementById("pv_meio").checked,
-pv_final: document.getElementById("pv_final").checked,
-pv_outros: document.getElementById("pv_outros").checked,
-
-pv_outros_desc: document.getElementById("pv_outros_desc").value,
-
-ficha: "Ficha 5",
-
-data: new Date().toLocaleDateString("pt-BR"),
-hora: new Date().toLocaleTimeString("pt-BR")
-
-});
-
+    ficha: "Ficha 5",
+    data: new Date().toLocaleDateString("pt-BR"),
+    hora: new Date().toLocaleTimeString("pt-BR")
+  });
 }
+
+function novaTurma() {
+  limparRascunho();
+
+  alert("✅ Ficha salva! Pronta para uma nova turma.");
+
+  document.getElementById("comp").value = "";
+  document.getElementById("turma").value = "";
+  document.getElementById("criterios").value = "";
+  document.getElementById("instrumentos").value = "";
+  document.getElementById("ev_texto").checked = false;
+  document.getElementById("ev_oral").checked = false;
+  document.getElementById("ev_md").checked = false;
+  document.getElementById("ev_livro").checked = false;
+  document.getElementById("ev_diag").checked = false;
+  document.getElementById("ev_form").checked = false;
+  document.getElementById("ev_auto").checked = false;
+  document.getElementById("ev_rubrica").checked = false;
+  document.getElementById("ev_port").checked = false;
+  document.getElementById("ev_obs").checked = false;
+  document.getElementById("ev_outros").checked = false;
+
+  document.getElementById("ev_outros_desc").value = "";
+
+  document.getElementById("pv_inicio").checked = false;
+  document.getElementById("pv_recomp").checked = false;
+  document.getElementById("pv_meio").checked = false;
+  document.getElementById("pv_final").checked = false;
+  document.getElementById("pv_outros").checked = false;
+
+  document.getElementById("pv_outros_desc").value = "";
+
+  document.getElementById("ae").value = "";
+  document.getElementById("retomada").value = "";
+}
+
+async function salvarENovaTurma() {
+  await salvarFicha();
+  novaTurma();
+}
+
+async function carregarFicha4() {
+  const professor = document.getElementById("prof").value;
+  const componente = document.getElementById("comp").value;
+  const turma = document.getElementById("turma").value;
+
+  if(!professor || !componente || !turma) {
+      alert("Por favor, selecione o Professor, Componente e Turma para buscar os dados.");
+      return;
+  }
+
+  const consulta = query(
+    collection(db, "fichas"),
+    where("prof", "==", professor),
+    where("comp", "==", componente),
+    where("turma", "==", turma),
+    where("ficha", "==", "Ficha 4")
+  );
+
+  const resultado = await getDocs(consulta);
+
+  if (resultado.size === 0) {
+      alert("Nenhum dado encontrado na Ficha 4 para esses filtros.");
+      return;
+  }
+
+  const docFicha = resultado.docs[0].data();
+
+  document.getElementById("ae").value = docFicha.ae || "";
+  document.getElementById("retomada").value = docFicha.retomada || "";
+}
+
+// --- LÓGICA DE RASCUNHO AUTOMÁTICO (LOCAL) ---
+const CHAVE_RASCUNHO = "ficha5_rascunho_local";
+
+function salvarRascunho() {
+  const dados = {};
+  document.querySelectorAll("input, textarea, select").forEach(campo => {
+    if (campo.id) {
+      if (campo.type === "checkbox") {
+        dados[campo.id] = campo.checked;
+      } else {
+        dados[campo.id] = campo.value;
+      }
+    }
+  });
+  localStorage.setItem(CHAVE_RASCUNHO, JSON.stringify(dados));
+  alert("💾 Rascunho salvo no seu computador!");
+}
+
+function carregarRascunho() {
+  const dadosSalvos = localStorage.getItem(CHAVE_RASCUNHO);
+  if (dadosSalvos) {
+    const dados = JSON.parse(dadosSalvos);
+    Object.keys(dados).forEach(id => {
+      const campo = document.getElementById(id);
+      if (campo) {
+        if (campo.type === "checkbox") {
+          campo.checked = dados[id];
+        } else {
+          campo.value = dados[id];
+        }
+      }
+    });
+  }
+}
+
+function limparRascunho() {
+  localStorage.removeItem(CHAVE_RASCUNHO);
+}
+
+// Torna as funções globais para os botões do HTML
 window.salvarFicha = salvarFicha;
 window.novaTurma = novaTurma;
 window.salvarENovaTurma = salvarENovaTurma;
 window.carregarFicha4 = carregarFicha4;
-async function salvarENovaTurma() {
+window.salvarRascunho = salvarRascunho;
 
-    await salvarFicha();
-
-    novaTurma();
-
-}
-function novaTurma() {
-alert("✅ Ficha salva! Pronta para uma nova turma.");
-
-document.getElementById("comp").value = "";
-document.getElementById("turma").value = "";
-document.getElementById("criterios").value = "";
-document.getElementById("instrumentos").value = "";
-document.getElementById("ev_texto").checked = false;
-document.getElementById("ev_oral").checked = false;
-document.getElementById("ev_md").checked = false;
-document.getElementById("ev_livro").checked = false;
-document.getElementById("ev_diag").checked = false;
-document.getElementById("ev_form").checked = false;
-document.getElementById("ev_auto").checked = false;
-document.getElementById("ev_rubrica").checked = false;
-document.getElementById("ev_port").checked = false;
-document.getElementById("ev_obs").checked = false;
-document.getElementById("ev_outros").checked = false;
-
-document.getElementById("ev_outros_desc").value = "";
-
-document.getElementById("pv_inicio").checked = false;
-document.getElementById("pv_recomp").checked = false;
-document.getElementById("pv_meio").checked = false;
-document.getElementById("pv_final").checked = false;
-document.getElementById("pv_outros").checked = false;
-
-document.getElementById("pv_outros_desc").value = "";
-
-document.getElementById("ae").value = "";
-document.getElementById("retomada").value = "";
-
-}
-
-async function carregarFicha4() {
-
-
-
-const professor = document.getElementById("prof").value;
-const componente = document.getElementById("comp").value;
-const turma = document.getElementById("turma").value;
-
-const consulta = query(
-collection(db, "fichas"),
-where("prof", "==", professor),
-where("comp", "==", componente),
-
-where("turma", "==", turma),
-where("ficha", "==", "Ficha 4")
-
-);
-
-const resultado = await getDocs(consulta);
-
-
-
-
-const docFicha = resultado.docs[0].data();
-
-
-
-document.getElementById("ae").value = docFicha.ae;
-document.getElementById("retomada").value = 
-docFicha.retomada;
-
-
-
-
-
-
-}
+// Carrega o rascunho automaticamente ao abrir
+window.addEventListener("DOMContentLoaded", carregarRascunho);
 
 </script>
 

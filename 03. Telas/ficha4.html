@@ -31,6 +31,7 @@ h2{
 }
 
 input[type=text],
+select,
 textarea{
     width:100%;
     padding:8px;
@@ -70,14 +71,11 @@ textarea{
     margin-top:10px;
 }
 
-
 .botoes {
     display: flex;
     margin-top: 20px;
     gap: 15px;
 }
-
-
 
 .botao-salvar{
     flex:1;
@@ -87,6 +85,7 @@ textarea{
     padding:18px;
     cursor:pointer;
     font-size:16px;
+    border-radius:4px;
 }
 
 .botao-continuar {
@@ -100,10 +99,9 @@ textarea{
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    border-radius:4px;
 }
 
-
-/* ESTILO DO BOTÃO DE VOLTAR */
 .botao-voltar {
     flex: 1; 
     background-color: #6c757d; 
@@ -151,7 +149,6 @@ textarea{
 
 <select id="prof">
 <option value="">Professor(a)</option>
-
 <option>Caroline</option>
 <option>Dante</option>
 <option>Débora</option>
@@ -164,12 +161,12 @@ textarea{
 <option>Regiane</option>
 <option>Rejane</option>
 <option>Sabrina</option>
-
+<option>Emerson</option>
+<option>Flávio</option>
 </select>
 
 <select id="comp">
 <option value="">Componente Curricular</option>
-
 <option>Arte</option>
 <option>Biologia</option>
 <option>Educação Física</option>
@@ -182,19 +179,26 @@ textarea{
 <option>Matemática</option>
 <option>Química</option>
 <option>Sociologia</option>
-
+<option>Matemática Aplicada a Administração</option>
+<option>Introdução a Administração e Legislação de Pessoas</option>
+<option>Carreira e Competencia ao Mercado de Trabalho</option>
+<option>Marketing Estratégico</option>
+<option>Comunicação Empresarial</option>
+<option>Gestão Financeira e Contabilidade</option>
+<option>Projeto Multidisciplinar</option>
+<option>Gestão de Operações</option>
+<option>Inovação e desenvolvimento de Negócios</option>
+<option>Liderança e Oratória</option>
 </select>
 
 <select id="turma">
 <option value="">Turma</option>
-
 <option>1ª A</option>
 <option>1ª B</option>
 <option>2ª A</option>
 <option>2ª B</option>
 <option>3ª A</option>
 <option>3ª B</option>
-
 </select>
 
 </div>
@@ -206,9 +210,7 @@ textarea{
 type="button"
 onclick="carregarFicha2()"
 style="background:#16a085;color:white;border:none;padding:12px 20px;cursor:pointer;border-radius:4px;">
-
 Carregar dados da Ficha 2
-
 </button>
 
 </div>
@@ -227,17 +229,13 @@ Planeje as ações pedagógicas que contribuirão para a recomposição desses c
 <h2>Aprendizagem Essencial</h2>
 
 <div class="bloco">
-
 <textarea id="ae" placeholder="(Recebida automaticamente da Ficha 2)"></textarea>
-
 </div>
 
 <h2>Conhecimentos prévios que necessitam retomada</h2>
 
 <div class="bloco">
-
 <textarea id="retomada" placeholder="(Recebidos automaticamente da Ficha 2)"></textarea>
-
 </div>
 
 <h2>1. Quais estratégias pedagógicas serão utilizadas para recompor esses conhecimentos prévios?</h2>
@@ -247,25 +245,16 @@ Planeje as ações pedagógicas que contribuirão para a recomposição desses c
 <h2>2. Quais recursos pedagógicos serão utilizados?</h2>
 
 <div class="checkbox-group">
-
 <label><input type="checkbox" id="rec_md"> Material Digital</label>
-
 <label><input type="checkbox" id="rec_livro"> Livro do Estudante</label>
-
 <label><input type="checkbox" id="rec_pnld"> Livro Didático (PNLD)</label>
-
 <label><input type="checkbox" id="rec_tarefa"> Tarefa SP</label>
-
 <label><input type="checkbox" id="rec_plataforma"> Plataformas Digitais</label>
-
 <label><input type="checkbox" id="rec_prof"> Recursos produzidos pelo professor</label>
-
 <label><input type="checkbox" id="rec_outros"> Outros</label>
-
-</div>
 </div>
 
-
+<br>
 <input type="text" id="outros_recursos" placeholder="Caso tenha marcado 'Outros', especifique aqui">
 
 <h2>3. Quantas aulas serão destinadas a essa recomposição?</h2>
@@ -279,23 +268,14 @@ Planeje as ações pedagógicas que contribuirão para a recomposição desses c
 <h2>5. Quais instrumentos serão utilizados para acompanhar o desenvolvimento das aprendizagens?</h2>
 
 <div class="checkbox-group">
-
 <label><input type="checkbox" id="inst_obs"> Observação sistemática</label>
-
 <label><input type="checkbox" id="inst_texto"> Produções escritas</label>
-
 <label><input type="checkbox" id="inst_oral"> Produções orais</label>
-
 <label><input type="checkbox" id="inst_formativa"> Avaliação formativa</label>
-
 <label><input type="checkbox" id="inst_auto"> Autoavaliação</label>
-
 <label><input type="checkbox" id="inst_rubrica"> Rubricas</label>
-
 <label><input type="checkbox" id="inst_portfolio"> Portfólio</label>
-
 <label><input type="checkbox" id="inst_outros"> Outros</label>
-
 </div>
 
 <br>
@@ -303,12 +283,10 @@ Planeje as ações pedagógicas que contribuirão para a recomposição desses c
 <input type="text" id="outros_inst" placeholder="Caso tenha marcado 'Outros', especifique aqui">
 
 <div class="botoes">
-
-    <button class="botao-continuar" onclick="salvarENovaTurma()">
-        Salvar e Nova Turma/Disciplina
-    </button>
-    
- <a href="../03. Telas/missão2.html" class="botao-voltar">⬅️ Voltar para a Missão 2</a>
+    <button class="botao-salvar" type="button" onclick="salvarRascunho()">💾 Salvar Rascunho</button>
+    <button class="botao-continuar" type="button" onclick="salvarENovaTurma()">Salvar e Nova Turma/Disciplina</button>
+    <button class="botao-voltar" type="button" onclick="window.location.href='missão2.html'">⬅️ Voltar para a Missão 2</button>
+</div>
 
 </div>
 
@@ -323,160 +301,194 @@ const firebaseConfig = {
   appId: "1:117617967349:web:d456181a57292a19a485bc",
   measurementId: "G-ZTSNG3CXBX"
 };
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 import {
-getFirestore,
-collection,
-addDoc,
-query,
-where,
-getDocs
+  getFirestore,
+  collection,
+  addDoc,
+  query,
+  where,
+  getDocs
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 console.log("Firebase conectado");
-function salvarFicha() {
 
+async function salvarFicha() {
+  await addDoc(collection(db, "fichas"), {
+    prof: document.getElementById("prof").value,
+    comp: document.getElementById("comp").value,
+    turma: document.getElementById("turma").value,
+    ae: document.getElementById("ae").value,
+    retomada: document.getElementById("retomada").value,
 
-addDoc(collection(db, "fichas"), {
- prof: document.getElementById("prof").value,
-comp: document.getElementById("comp").value,
-turma: document.getElementById("turma").value,
-ae: document.getElementById("ae").value,
-retomada: document.getElementById("retomada").value,
+    estrategias: document.getElementById("estrategias").value,
+    rec_md: document.getElementById("rec_md").checked,
+    rec_livro: document.getElementById("rec_livro").checked,
+    rec_pnld: document.getElementById("rec_pnld").checked,
+    rec_tarefa: document.getElementById("rec_tarefa").checked,
+    rec_plataforma: document.getElementById("rec_plataforma").checked,
+    rec_prof: document.getElementById("rec_prof").checked,
+    rec_outros: document.getElementById("rec_outros").checked,
+    outros_recursos: document.getElementById("outros_recursos").value,
+    qtd_aulas: document.getElementById("qtd_aulas").value,
+    apoios: document.getElementById("apoios").value,
 
-estrategias: document.getElementById("estrategias").value,
-rec_md: document.getElementById("rec_md").checked,
-rec_livro: document.getElementById("rec_livro").checked,
-rec_pnld: document.getElementById("rec_pnld").checked,
-rec_tarefa: document.getElementById("rec_tarefa").checked,
-rec_plataforma: document.getElementById("rec_plataforma").checked,
-rec_prof: document.getElementById("rec_prof").checked,
-rec_outros: document.getElementById("rec_outros").checked,
-outros_recursos: document.getElementById("outros_recursos").value,
-qtd_aulas: document.getElementById("qtd_aulas").value,
-apoios: document.getElementById("apoios").value,
+    inst_obs: document.getElementById("inst_obs").checked,
+    inst_texto: document.getElementById("inst_texto").checked,
+    inst_oral: document.getElementById("inst_oral").checked,
+    inst_formativa: document.getElementById("inst_formativa").checked,
+    inst_auto: document.getElementById("inst_auto").checked,
+    inst_rubrica: document.getElementById("inst_rubrica").checked,
+    inst_portfolio: document.getElementById("inst_portfolio").checked,
+    inst_outros: document.getElementById("inst_outros").checked,
 
-inst_obs: document.getElementById("inst_obs").checked,
-inst_texto: document.getElementById("inst_texto").checked,
-inst_oral: document.getElementById("inst_oral").checked,
-inst_formativa: document.getElementById("inst_formativa").checked,
-inst_auto: document.getElementById("inst_auto").checked,
-inst_rubrica: document.getElementById("inst_rubrica").checked,
-inst_portfolio: document.getElementById("inst_portfolio").checked,
-inst_outros: document.getElementById("inst_outros").checked,
+    outros_inst: document.getElementById("outros_inst").value,
 
-outros_inst: document.getElementById("outros_inst").value,
-
-
-ficha: "Ficha 4",
-
-data: new Date().toLocaleDateString("pt-BR"),
-hora: new Date().toLocaleTimeString("pt-BR")
-});
+    ficha: "Ficha 4",
+    data: new Date().toLocaleDateString("pt-BR"),
+    hora: new Date().toLocaleTimeString("pt-BR")
+  });
 }
+
+function novaTurma() {
+  limparRascunho();
+
+  alert("✅ Ficha salva! Pronta para uma nova turma.");
+
+  document.getElementById("comp").value = "";
+  document.getElementById("turma").value = "";
+
+  document.getElementById("ae").value = "";
+  document.getElementById("retomada").value = "";
+  document.getElementById("estrategias").value = "";
+
+  document.getElementById("rec_md").checked = false;
+  document.getElementById("rec_livro").checked = false;
+  document.getElementById("rec_pnld").checked = false;
+  document.getElementById("rec_tarefa").checked = false;
+  document.getElementById("rec_plataforma").checked = false;
+  document.getElementById("rec_prof").checked = false;
+  document.getElementById("rec_outros").checked = false;
+
+  document.getElementById("outros_recursos").value = "";
+  document.getElementById("qtd_aulas").value = "";
+  document.getElementById("apoios").value = "";
+
+  document.getElementById("inst_obs").checked = false;
+  document.getElementById("inst_texto").checked = false;
+  document.getElementById("inst_oral").checked = false;
+  document.getElementById("inst_formativa").checked = false;
+  document.getElementById("inst_auto").checked = false;
+  document.getElementById("inst_rubrica").checked = false;
+  document.getElementById("inst_portfolio").checked = false;
+  document.getElementById("inst_outros").checked = false;
+
+  document.getElementById("outros_inst").value = "";
+}
+
+async function salvarENovaTurma() {
+  await salvarFicha();
+  novaTurma();
+}
+
+async function carregarFicha2() {
+  const professor = document.getElementById("prof").value;
+  const componente = document.getElementById("comp").value;
+  const turma = document.getElementById("turma").value;
+
+  if(!professor || !componente || !turma) {
+      alert("Por favor, selecione o Professor, Componente e Turma para buscar os dados.");
+      return;
+  }
+
+  const consulta = query(
+    collection(db, "fichas"),
+    where("prof", "==", professor),
+    where("comp", "==", componente),
+    where("turma", "==", turma),
+    where("ficha", "==", "Ficha 2")
+  );
+
+  const resultado = await getDocs(consulta);
+
+  if(resultado.size === 0){
+      alert("Nenhum dado encontrado na Ficha 2 para esses filtros.");
+      return;
+  }
+
+  const docFicha = resultado.docs[0].data();
+
+  let textoAE = "";
+  let textoRet = "";
+
+  for (let i = 1; i <= 10; i++) {
+      const ae = docFicha["ae" + i];
+      const ret = docFicha["ret" + i];
+
+      if (ret && ret.trim() !== "") {
+          textoAE += ae + "\n\n";
+          textoRet += ae + "\n";
+          textoRet += ret + "\n";
+          textoRet += "----------------------------\n\n";
+      }
+  }
+
+  document.getElementById("ae").value = textoAE;
+  document.getElementById("retomada").value = textoRet;
+}
+
+// --- LÓGICA DE RASCUNHO AUTOMÁTICO (LOCAL) ---
+const CHAVE_RASCUNHO = "ficha4_rascunho_local";
+
+function salvarRascunho() {
+  const dados = {};
+  document.querySelectorAll("input, textarea, select").forEach(campo => {
+    if (campo.id) {
+      if (campo.type === "checkbox") {
+        dados[campo.id] = campo.checked;
+      } else {
+        dados[campo.id] = campo.value;
+      }
+    }
+  });
+  localStorage.setItem(CHAVE_RASCUNHO, JSON.stringify(dados));
+  alert("💾 Rascunho salvo no seu computador!");
+}
+
+function carregarRascunho() {
+  const dadosSalvos = localStorage.getItem(CHAVE_RASCUNHO);
+  if (dadosSalvos) {
+    const dados = JSON.parse(dadosSalvos);
+    Object.keys(dados).forEach(id => {
+      const campo = document.getElementById(id);
+      if (campo) {
+        if (campo.type === "checkbox") {
+          campo.checked = dados[id];
+        } else {
+          campo.value = dados[id];
+        }
+      }
+    });
+  }
+}
+
+function limparRascunho() {
+  localStorage.removeItem(CHAVE_RASCUNHO);
+}
+
+// Torna as funções globais para os botões do HTML
 window.salvarFicha = salvarFicha;
 window.novaTurma = novaTurma;
 window.salvarENovaTurma = salvarENovaTurma;
 window.carregarFicha2 = carregarFicha2;
-function novaTurma() {
+window.salvarRascunho = salvarRascunho;
 
-alert("✅ Ficha salva! Pronta para uma nova turma.");
+// Carrega o rascunho automaticamente ao abrir
+window.addEventListener("DOMContentLoaded", carregarRascunho);
 
-document.getElementById("comp").value = "";
-document.getElementById("turma").value = "";
-
-document.getElementById("ae").value = "";
-document.getElementById("retomada").value = "";
-document.getElementById("estrategias").value = "";
-
-document.getElementById("rec_md").checked = false;
-document.getElementById("rec_livro").checked = false;
-document.getElementById("rec_pnld").checked = false;
-document.getElementById("rec_tarefa").checked = false;
-document.getElementById("rec_plataforma").checked = false;
-document.getElementById("rec_prof").checked = false;
-document.getElementById("rec_outros").checked = false;
-
-document.getElementById("outros_recursos").value = "";
-document.getElementById("qtd_aulas").value = "";
-document.getElementById("apoios").value = "";
-
-document.getElementById("inst_obs").checked = false;
-document.getElementById("inst_texto").checked = false;
-document.getElementById("inst_oral").checked = false;
-document.getElementById("inst_formativa").checked = false;
-document.getElementById("inst_auto").checked = false;
-document.getElementById("inst_rubrica").checked = false;
-document.getElementById("inst_portfolio").checked = false;
-document.getElementById("inst_outros").checked = false;
-
-document.getElementById("outros_inst").value = "";
-}
-async function salvarENovaTurma() {
-
-    await salvarFicha();
-
-    novaTurma();
-
-}
-async function carregarFicha2() {
-const professor = document.getElementById("prof").value;
-const componente = document.getElementById("comp").value;
-const turma = document.getElementById("turma").value;
-
-const consulta = query(
-collection(db, "fichas"),
-where("prof", "==", professor),
-where("comp", "==", componente),
-where("turma", "==", turma),
-where("ficha", "==", "Ficha 2")
-);
-
-const resultado = await getDocs(consulta);
-
-
-
-if(resultado.size === 0){
-    return;
-}
-
-
-
-const docFicha = resultado.docs[0].data();
-
-let textoAE = "";
-let textoRet = "";
-
-for (let i = 1; i <= 10; i++) {
-
-    const ae = docFicha["ae" + i];
-    const ret = docFicha["ret" + i];
-
-    if (ret && ret.trim() !== "") {
-
-        textoAE += ae + "\n\n";
-
-        textoRet += ae + "\n";
-        textoRet += ret + "\n";
-        textoRet += "----------------------------\n\n";
-
-    }
-
-}
-
-document.getElementById("ae").value = textoAE;
-document.getElementById("retomada").value = textoRet;
-
-
-
-}
 </script>
-
-
-
-
-</div>
-
 </body>
 </html>
