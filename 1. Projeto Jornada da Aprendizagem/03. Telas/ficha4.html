@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Ficha 4 – Plano de Recomposição e Acompanhamento das Aprendizagens Prioritárias</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background:#f2f2f2;
+    margin:0;
+    padding:20px;
+}
+
+.container{
+    background:#ffffff;
+    max-width:1200px;
+    margin:auto;
+    padding:40px;
+    border-radius:8px;
+}
+
+h1{
+    color:#2c3e50;
+}
+
+h2{
+    color:#34495e;
+    margin-top:40px;
+}
+
+input[type=text],
+textarea{
+    width:100%;
+    padding:8px;
+    box-sizing:border-box;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.identificacao{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:10px;
+}
+
+.orientacao{
+    background:#f8f9fa;
+    padding:12px;
+    border-left:5px solid #3498db;
+    margin-top:10px;
+    margin-bottom:15px;
+}
+
+.bloco{
+    border:1px solid #cccccc;
+    padding:15px;
+    margin-bottom:20px;
+    background:#fafafa;
+}
+
+.checkbox-group{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    margin-top:10px;
+}
+
+
+.botoes {
+    display: flex;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+
+
+.botao-salvar{
+    flex:1;
+    background:#27ae60;
+    color:white;
+    border:none;
+    padding:18px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.botao-continuar {
+    flex: 1;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 18px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ESTILO DO BOTÃO DE VOLTAR */
+.botao-voltar {
+    flex: 1; 
+    background-color: #6c757d; 
+    color: white;
+    border: none;
+    padding: 18px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none; 
+    text-align: center; 
+    border-radius: 4px; 
+    transition: background-color 0.3s; 
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-voltar:hover {
+    background-color: #5a6268; 
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>FICHA 4 – PLANO DE RECOMPOSIÇÃO E ACOMPANHAMENTO DAS APRENDIZAGENS PRIORITÁRIAS</h1>
+
+<h3>4ª Missão – Traçando a Rota</h3>
+
+<p>
+<b>Finalidade:</b> Planejar ações pedagógicas voltadas à recomposição dos conhecimentos prévios identificados na Ficha 2.
+</p>
+
+<p>
+<b>Importante:</b> Esta ficha deverá ser preenchida para cada turma e componente curricular, considerando os conhecimentos prévios que necessitam retomada e as especificidades do grupo de estudantes.
+</p>
+
+<h2>Identificação</h2>
+
+<div class="identificacao">
+
+<select id="prof">
+<option value="">Professor(a)</option>
+
+<option>Caroline</option>
+<option>Dante</option>
+<option>Débora</option>
+<option>Francisca</option>
+<option>Gleison</option>
+<option>Haron</option>
+<option>Jayssa</option>
+<option>Marisa</option>
+<option>Michelle</option>
+<option>Regiane</option>
+<option>Rejane</option>
+<option>Sabrina</option>
+
+</select>
+
+<select id="comp">
+<option value="">Componente Curricular</option>
+
+<option>Arte</option>
+<option>Biologia</option>
+<option>Educação Física</option>
+<option>Filosofia</option>
+<option>Física</option>
+<option>Geografia</option>
+<option>História</option>
+<option>Inglês</option>
+<option>Língua Portuguesa</option>
+<option>Matemática</option>
+<option>Química</option>
+<option>Sociologia</option>
+
+</select>
+
+<select id="turma">
+<option value="">Turma</option>
+
+<option>1ª A</option>
+<option>1ª B</option>
+<option>2ª A</option>
+<option>2ª B</option>
+<option>3ª A</option>
+<option>3ª B</option>
+
+</select>
+
+</div>
+
+<div class="orientacao">
+<div style="margin-top:15px; margin-bottom:15px;">
+
+<button
+type="button"
+onclick="carregarFicha2()"
+style="background:#16a085;color:white;border:none;padding:12px 20px;cursor:pointer;border-radius:4px;">
+
+Carregar dados da Ficha 2
+
+</button>
+
+</div>
+<b>Orientação ao professor:</b>
+
+<br><br>
+
+As Aprendizagens Essenciais e os conhecimentos prévios apresentados nesta ficha foram identificados na Ficha 2 como necessitando de retomada.
+
+<br><br>
+
+Planeje as ações pedagógicas que contribuirão para a recomposição desses conhecimentos e para o desenvolvimento das aprendizagens previstas para o bimestre.
+
+</div>
+
+<h2>Aprendizagem Essencial</h2>
+
+<div class="bloco">
+
+<textarea id="ae" placeholder="(Recebida automaticamente da Ficha 2)"></textarea>
+
+</div>
+
+<h2>Conhecimentos prévios que necessitam retomada</h2>
+
+<div class="bloco">
+
+<textarea id="retomada" placeholder="(Recebidos automaticamente da Ficha 2)"></textarea>
+
+</div>
+
+<h2>1. Quais estratégias pedagógicas serão utilizadas para recompor esses conhecimentos prévios?</h2>
+
+<textarea id="estrategias"></textarea>
+
+<h2>2. Quais recursos pedagógicos serão utilizados?</h2>
+
+<div class="checkbox-group">
+
+<label><input type="checkbox" id="rec_md"> Material Digital</label>
+
+<label><input type="checkbox" id="rec_livro"> Livro do Estudante</label>
+
+<label><input type="checkbox" id="rec_pnld"> Livro Didático (PNLD)</label>
+
+<label><input type="checkbox" id="rec_tarefa"> Tarefa SP</label>
+
+<label><input type="checkbox" id="rec_plataforma"> Plataformas Digitais</label>
+
+<label><input type="checkbox" id="rec_prof"> Recursos produzidos pelo professor</label>
+
+<label><input type="checkbox" id="rec_outros"> Outros</label>
+
+</div>
+</div>
+
+
+<input type="text" id="outros_recursos" placeholder="Caso tenha marcado 'Outros', especifique aqui">
+
+<h2>3. Quantas aulas serão destinadas a essa recomposição?</h2>
+
+<input type="text" id="qtd_aulas" placeholder="Ex.: 4 aulas">
+
+<h2>4. Quais adaptações ou apoios serão necessários?</h2>
+
+<textarea id="apoios"></textarea>
+
+<h2>5. Quais instrumentos serão utilizados para acompanhar o desenvolvimento das aprendizagens?</h2>
+
+<div class="checkbox-group">
+
+<label><input type="checkbox" id="inst_obs"> Observação sistemática</label>
+
+<label><input type="checkbox" id="inst_texto"> Produções escritas</label>
+
+<label><input type="checkbox" id="inst_oral"> Produções orais</label>
+
+<label><input type="checkbox" id="inst_formativa"> Avaliação formativa</label>
+
+<label><input type="checkbox" id="inst_auto"> Autoavaliação</label>
+
+<label><input type="checkbox" id="inst_rubrica"> Rubricas</label>
+
+<label><input type="checkbox" id="inst_portfolio"> Portfólio</label>
+
+<label><input type="checkbox" id="inst_outros"> Outros</label>
+
+</div>
+
+<br>
+
+<input type="text" id="outros_inst" placeholder="Caso tenha marcado 'Outros', especifique aqui">
+
+<div class="botoes">
+
+    <button class="botao-continuar" onclick="salvarENovaTurma()">
+        Salvar e Nova Turma/Disciplina
+    </button>
+    
+ <a href="../03. Telas/missão2.html" class="botao-voltar">⬅️ Voltar para a Missão 2</a>
+
+</div>
+
+<script type="module">
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCFDIAUqMApNoAkzmx-lZFFnIXUVrFNaS0",
+  authDomain: "jornada-da-aprendizagem.firebaseapp.com",
+  projectId: "jornada-da-aprendizagem",
+  storageBucket: "jornada-da-aprendizagem.firebasestorage.app",
+  messagingSenderId: "117617967349",
+  appId: "1:117617967349:web:d456181a57292a19a485bc",
+  measurementId: "G-ZTSNG3CXBX"
+};
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import {
+getFirestore,
+collection,
+addDoc,
+query,
+where,
+getDocs
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+console.log("Firebase conectado");
+function salvarFicha() {
+
+
+addDoc(collection(db, "fichas"), {
+ prof: document.getElementById("prof").value,
+comp: document.getElementById("comp").value,
+turma: document.getElementById("turma").value,
+ae: document.getElementById("ae").value,
+retomada: document.getElementById("retomada").value,
+
+estrategias: document.getElementById("estrategias").value,
+rec_md: document.getElementById("rec_md").checked,
+rec_livro: document.getElementById("rec_livro").checked,
+rec_pnld: document.getElementById("rec_pnld").checked,
+rec_tarefa: document.getElementById("rec_tarefa").checked,
+rec_plataforma: document.getElementById("rec_plataforma").checked,
+rec_prof: document.getElementById("rec_prof").checked,
+rec_outros: document.getElementById("rec_outros").checked,
+outros_recursos: document.getElementById("outros_recursos").value,
+qtd_aulas: document.getElementById("qtd_aulas").value,
+apoios: document.getElementById("apoios").value,
+
+inst_obs: document.getElementById("inst_obs").checked,
+inst_texto: document.getElementById("inst_texto").checked,
+inst_oral: document.getElementById("inst_oral").checked,
+inst_formativa: document.getElementById("inst_formativa").checked,
+inst_auto: document.getElementById("inst_auto").checked,
+inst_rubrica: document.getElementById("inst_rubrica").checked,
+inst_portfolio: document.getElementById("inst_portfolio").checked,
+inst_outros: document.getElementById("inst_outros").checked,
+
+outros_inst: document.getElementById("outros_inst").value,
+
+
+ficha: "Ficha 4",
+
+data: new Date().toLocaleDateString("pt-BR"),
+hora: new Date().toLocaleTimeString("pt-BR")
+});
+}
+window.salvarFicha = salvarFicha;
+window.novaTurma = novaTurma;
+window.salvarENovaTurma = salvarENovaTurma;
+window.carregarFicha2 = carregarFicha2;
+function novaTurma() {
+
+alert("✅ Ficha salva! Pronta para uma nova turma.");
+
+document.getElementById("comp").value = "";
+document.getElementById("turma").value = "";
+
+document.getElementById("ae").value = "";
+document.getElementById("retomada").value = "";
+document.getElementById("estrategias").value = "";
+
+document.getElementById("rec_md").checked = false;
+document.getElementById("rec_livro").checked = false;
+document.getElementById("rec_pnld").checked = false;
+document.getElementById("rec_tarefa").checked = false;
+document.getElementById("rec_plataforma").checked = false;
+document.getElementById("rec_prof").checked = false;
+document.getElementById("rec_outros").checked = false;
+
+document.getElementById("outros_recursos").value = "";
+document.getElementById("qtd_aulas").value = "";
+document.getElementById("apoios").value = "";
+
+document.getElementById("inst_obs").checked = false;
+document.getElementById("inst_texto").checked = false;
+document.getElementById("inst_oral").checked = false;
+document.getElementById("inst_formativa").checked = false;
+document.getElementById("inst_auto").checked = false;
+document.getElementById("inst_rubrica").checked = false;
+document.getElementById("inst_portfolio").checked = false;
+document.getElementById("inst_outros").checked = false;
+
+document.getElementById("outros_inst").value = "";
+}
+async function salvarENovaTurma() {
+
+    await salvarFicha();
+
+    novaTurma();
+
+}
+async function carregarFicha2() {
+const professor = document.getElementById("prof").value;
+const componente = document.getElementById("comp").value;
+const turma = document.getElementById("turma").value;
+
+const consulta = query(
+collection(db, "fichas"),
+where("prof", "==", professor),
+where("comp", "==", componente),
+where("turma", "==", turma),
+where("ficha", "==", "Ficha 2")
+);
+
+const resultado = await getDocs(consulta);
+
+
+
+if(resultado.size === 0){
+    return;
+}
+
+
+
+const docFicha = resultado.docs[0].data();
+
+let textoAE = "";
+let textoRet = "";
+
+for (let i = 1; i <= 10; i++) {
+
+    const ae = docFicha["ae" + i];
+    const ret = docFicha["ret" + i];
+
+    if (ret && ret.trim() !== "") {
+
+        textoAE += ae + "\n\n";
+
+        textoRet += ae + "\n";
+        textoRet += ret + "\n";
+        textoRet += "----------------------------\n\n";
+
+    }
+
+}
+
+document.getElementById("ae").value = textoAE;
+document.getElementById("retomada").value = textoRet;
+
+
+
+}
+</script>
+
+
+
+
+</div>
+
+</body>
+</html>

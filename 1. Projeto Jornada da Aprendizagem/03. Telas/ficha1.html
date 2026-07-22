@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Ficha 1 – Diagnóstico da Turma</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background:#f2f2f2;
+    margin:0;
+    padding:20px;
+}
+
+.container{
+    background:#ffffff;
+    max-width:1200px;
+    margin:auto;
+    padding:40px;
+    border-radius:8px;
+}
+
+h1{
+    color:#2c3e50;
+}
+
+h2{
+    margin-top:40px;
+    color:#34495e;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+    margin-bottom:20px;
+}
+
+th,td{
+    border:1px solid #000;
+    padding:10px;
+    vertical-align:top;
+}
+
+th{
+    background:#eeeeee;
+}
+
+input[type=text],
+textarea,
+select{
+    width:100%;
+    padding:8px;
+    box-sizing:border-box;
+}
+
+textarea{
+    min-height:80px;
+}
+
+.identificacao{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.orientacao{
+    background:#f8f9fa;
+    padding:12px;
+    border-left:5px solid #3498db;
+    margin-top:10px;
+    margin-bottom:15px;
+}
+
+.botoes{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.botao-salvar{
+    flex:1;
+    background:#27ae60;
+    color:white;
+    border:none;
+    padding:18px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.botao-continuar{
+    flex:1;
+    background:#2980b9;
+    color:white;
+    border:none;
+    padding:18px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.botao-voltar {
+    flex: 1;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 18px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-voltar:hover {
+    background-color: #5a6268;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>FICHA 1 – DIAGNÓSTICO DA TURMA</h1>
+<h3>1ª Missão – Arrumando a Mochila</h3>
+
+<p>
+<b>Finalidade:</b> Analisar as evidências de aprendizagem da turma,
+identificando dificuldades, potencialidades e necessidades pedagógicas
+a partir dos dados da Secretaria da Educação, dos resultados da
+Prova Paulista, das avaliações da escola e das observações do professor.
+</p>
+
+<p>
+<b>Importante:</b> Esta ficha deverá ser preenchida para cada turma e componente curricular. Embora os estudantes estejam matriculados na mesma série, cada turma possui características, potencialidades e necessidades de aprendizagem próprias. Por isso, as análises e decisões pedagógicas devem considerar a realidade de cada grupo.
+</p>
+
+<h2>Identificação</h2>
+
+<div class="identificacao">
+
+<select id="prof">
+<option value="">Professor(a)</option>
+
+<option>Caroline</option>
+<option>Dante</option>
+<option>Débora</option>
+<option>Francisca</option>
+<option>Gleison</option>
+<option>Haron</option>
+<option>Jayssa</option>
+<option>Marisa</option>
+<option>Michelle</option>
+<option>Regiane</option>
+<option>Rejane</option>
+<option>Sabrina</option>
+<option>Emerson</option>
+<option>Flávio</option>
+</select>
+
+<select id="comp">
+<option value="">Componente Curricular</option>
+<option>Arte</option>
+<option>Biologia</option>
+<option>Educação Física</option>
+<option>Filosofia</option>
+<option>Física</option>
+<option>Geografia</option>
+<option>História</option>
+<option>Inglês</option>
+<option>Língua Portuguesa</option>
+<option>Matemática</option>
+<option>Química</option>
+<option>Sociologia</option>
+<option>Matemática Aplicada a Administração</option>
+<option>Introdução a Administração e Legislação de Pessoas</option>
+<option>Carreira e Competencia ao Mercado de Trabalho</option>
+<option>Marketing Estratégico</option>
+<option>Comunicação Empresarial</option>
+<option>Gestão Financeira e Contabilidade</option>
+<option>Projeto Multidisciplinar</option>
+<option>Gestão de Operações</option>
+<option>Inovação e desenvolvimento de Negócios</option>
+<option>Liderança e Oratória</option>
+
+
+</select>
+
+<select id="turma">
+<option value="">Turma</option>
+<option>1ª A</option>
+<option>1ª B</option>
+<option>2ª A</option>
+<option>2ª B</option>
+<option>3ª A</option>
+<option>3ª B</option>
+</select>
+
+<input type="text" id="total" placeholder="Total de estudantes">
+
+</div>
+
+<h2>PARTE A – O DIAGNÓSTICO APRESENTADO PELA SEDUC</h2>
+
+<p>
+<b>
+1. Quais descritores foram apontados pela Secretaria da Educação como aqueles que apresentaram maior defasagem?
+</b>
+</p>
+
+<div class="orientacao">
+
+<b>Orientação ao professor:</b>
+<br><br>
+
+Registre os descritores destacados pela Secretaria da Educação.
+Na segunda coluna, traduza o resultado para uma linguagem pedagógica,
+explicando o que essa dificuldade revela sobre a aprendizagem dos estudantes.
+Na terceira coluna, confronte esses resultados com a realidade da sua turma.
+
+</div>
+
+<table>
+
+<tr>
+<th>Descritor apresentado pela SEDUC</th>
+<th>O que esse resultado revela sobre a aprendizagem dos estudantes?</th>
+<th>Como essa dificuldade se apresenta na minha turma?</th>
+</tr>
+
+<tr>
+<td><textarea id="d1"></textarea></td>
+<td><textarea id="r1"></textarea></td>
+<td>
+<select id="inc1">
+<option>Selecione...</option>
+<option>Não foi identificada (0-5%)</option>
+<option>Poucos estudantes (6-25%)</option>
+<option>Parte da turma (26-50%)</option>
+<option>Maioria da turma (+50%)</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td><textarea id="d3"></textarea></td>
+<td><textarea id="r3"></textarea></td>
+<td>
+<select id="inc3">
+<option>Selecione...</option>
+<option>Não foi identificada (0-5%)</option>
+<option>Poucos estudantes (6-25%)</option>
+<option>Parte da turma (26-50%)</option>
+<option>Maioria da turma (+50%)</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td><textarea id="d2"></textarea></td>
+<td><textarea id="r2"></textarea></td>
+<td>
+<select id="inc2">
+<option>Selecione...</option>
+<option>Não foi identificada (0-5%)</option>
+<option>Poucos estudantes (6-25%)</option>
+<option>Parte da turma (26-50%)</option>
+<option>Maioria da turma (+50%)</option>
+</select>
+</td>
+</tr>
+
+</table>
+
+<p>
+<b>
+2. Quais orientações pedagógicas apresentadas pela Secretaria da Educação poderão contribuir para o trabalho com esta turma?
+</b>
+</p>
+
+<textarea id="orientacoes"></textarea>
+
+<h2>PARTE B – ESPECIFICIDADES DA TURMA</h2>
+
+<p>
+<b>
+3. Além das dificuldades apresentadas pela Secretaria da Educação, identifique descritores e/ou habilidades que representam desafios específicos desta turma.
+</b>
+</p>
+
+<div class="orientacao">
+
+<b>Orientação ao professor:</b>
+<br><br>
+
+Após confrontar os dados da rede com a realidade da turma,
+registre apenas dificuldades que não apareceram como destaque
+nos dados da Secretaria da Educação, mas que exigem atenção pedagógica.
+
+</div>
+
+<table>
+
+<tr>
+<th width="33%">Descritor/Habilidade</th>
+<th width="33%">Evidência que fundamenta essa análise</th>
+<th width="34%">O que essa análise indica para o trabalho pedagógico?</th>
+</tr>
+
+<tr>
+<td><textarea id="esp1"></textarea></td>
+<td><textarea id="evid1"></textarea></td>
+<td><textarea id="trab1"></textarea></td>
+</tr>
+
+<tr>
+<td><textarea id="esp2"></textarea></td>
+<td><textarea id="evid2"></textarea></td>
+<td><textarea id="trab2"></textarea></td>
+</tr>
+
+<tr>
+<td><textarea id="esp3"></textarea></td>
+<td><textarea id="evid3"></textarea></td>
+<td><textarea id="trab3"></textarea></td>
+</tr>
+
+</table>
+
+<p>
+<b>
+4. Quais descritores e/ou habilidades já estão consolidados nesta turma e poderão servir de base para o desenvolvimento das próximas aprendizagens?
+</b>
+</p>
+
+<div class="orientacao">
+
+<b>Orientação ao professor:</b>
+<br><br>
+
+Registre habilidades já consolidadas pelos estudantes e que poderão apoiar o desenvolvimento das aprendizagens previstas para o bimestre.
+
+</div>
+
+<table>
+
+<tr>
+<th>Descritor/Habilidade</th>
+<th>Evidência que fundamenta essa análise</th>
+</tr>
+
+<tr>
+<td><input type="text" id="cons1"></td>
+<td><input type="text" id="evcons1"></td>
+</tr>
+
+<tr>
+<td><input type="text" id="cons2"></td>
+<td><input type="text" id="evcons2"></td>
+</tr>
+
+<tr>
+<td><input type="text" id="cons3"></td>
+<td><input type="text" id="evcons3"></td>
+</tr>
+
+</table>
+
+<div class="botoes">
+
+
+
+<button class="botao-continuar" onclick="salvarENovaTurma()">
+Salvar e Nova Turma/Disciplina
+</button>
+<button class="botao-voltar" onclick="window.history.back()">⬅️ Voltar para a Missão 1</button>
+</div>
+
+
+<script type="module">
+const firebaseConfig = {
+  apiKey: "AIzaSyCFDIAUqMApNoAkzmx-lZFFnIXUVrFNaS0",
+  authDomain: "jornada-da-aprendizagem.firebaseapp.com",
+  projectId: "jornada-da-aprendizagem",
+  storageBucket: "jornada-da-aprendizagem.firebasestorage.app",
+  messagingSenderId: "117617967349",
+  appId: "1:117617967349:web:d456181a57292a19a485bc",
+  measurementId: "G-ZTSNG3CXBX"
+};
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+console.log("Firebase conectado");
+function salvarFicha() {
+
+
+addDoc(collection(db, "fichas"), {
+ prof: document.getElementById("prof").value,
+comp: document.getElementById("comp").value,
+turma: document.getElementById("turma").value,
+total: document.getElementById("total").value,
+d1: document.getElementById("d1").value,
+r1: document.getElementById("r1").value,
+inc1: document.getElementById("inc1").value,
+d2: document.getElementById("d2").value,
+r2: document.getElementById("r2").value,
+inc2: document.getElementById("inc2").value,
+d3: document.getElementById("d3").value,
+r3: document.getElementById("r3").value,
+inc3: document.getElementById("inc3").value,
+orientacoes: document.getElementById("orientacoes").value,
+esp1: document.getElementById("esp1").value,
+evid1: document.getElementById("evid1").value,
+trab1: document.getElementById("trab1").value,
+esp2: document.getElementById("esp2").value,
+evid2: document.getElementById("evid2").value,
+trab2: document.getElementById("trab2").value,
+esp3: document.getElementById("esp3").value,
+evid3: document.getElementById("evid3").value,
+trab3: document.getElementById("trab3").value,
+cons1: document.getElementById("cons1").value,
+evcons1: document.getElementById("evcons1").value,
+cons2: document.getElementById("cons2").value,
+evcons2: document.getElementById("evcons2").value,
+cons3: document.getElementById("cons3").value,
+evcons3: document.getElementById("evcons3").value,
+ficha: "Ficha 1",
+data: new Date().toLocaleDateString("pt-BR"),
+hora: new Date().toLocaleTimeString("pt-BR")
+});
+}
+window.salvarFicha = salvarFicha;
+
+function novaTurma() {
+
+alert("✅ Ficha salva! Pronta para uma nova turma.");
+
+document.getElementById("comp").value = "";
+document.getElementById("turma").value = "";
+document.getElementById("total").value = "";
+document.getElementById("d1").value = "";
+document.getElementById("r1").value = "";
+
+document.getElementById("d2").value = "";
+document.getElementById("r2").value = "";
+
+document.getElementById("d3").value = "";
+document.getElementById("r3").value = "";
+
+document.getElementById("orientacoes").value = "";
+document.getElementById("inc1").selectedIndex = 0;
+document.getElementById("inc2").selectedIndex = 0;
+document.getElementById("inc3").selectedIndex = 0;
+document.getElementById("esp1").value = "";
+document.getElementById("evid1").value = "";
+document.getElementById("trab1").value = "";
+
+document.getElementById("esp2").value = "";
+document.getElementById("evid2").value = "";
+document.getElementById("trab2").value = "";
+
+document.getElementById("esp3").value = "";
+document.getElementById("evid3").value = "";
+document.getElementById("trab3").value = "";
+
+document.getElementById("cons1").value = "";
+document.getElementById("evcons1").value = "";
+
+document.getElementById("cons2").value = "";
+document.getElementById("evcons2").value = "";
+
+document.getElementById("cons3").value = "";
+document.getElementById("evcons3").value = "";
+
+}
+window.novaTurma = novaTurma;
+window.salvarENovaTurma = salvarENovaTurma;
+window.salvarFichaComMensagem = salvarFichaComMensagem;
+async function salvarENovaTurma() {
+
+    await salvarFicha();
+
+    novaTurma();
+
+}
+async function salvarFichaComMensagem() {
+
+    await salvarFicha();
+
+    alert("✅ Ficha salva com sucesso! Você pode continuar editando depois.");
+
+}
+</script>
+</body>
+</html>

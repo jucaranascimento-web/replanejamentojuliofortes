@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Missão 3 Concluída</title>
+    <style>
+        body { background: #1E4D8C; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 8px; height: 100vh; display: flex; flex-direction: column; }
+        .container { max-width: 1000px; margin: auto; width: 100%; }
+        
+        /* Cabeçalho ajustado */
+        .header { background: white; padding: 10px 20px; border-radius: 20px; margin-bottom: 8px; }
+        .header-top { display: flex; justify-content: space-between; align-items: center; }
+        .logo { height: 75px; } /* Logos ligeiramente maiores */
+        .titulo-container { text-align: center; flex-grow: 1; }
+        .barra-progresso { background: #27ae60; color: white; padding: 8px; border-radius: 10px; font-weight: bold; text-align: center; margin-top: 10px; font-size: 0.9em; }
+        
+        /* Card central mais compacto */
+        .card { background: white; padding: 18px; border-radius: 20px; display: grid; grid-template-columns: 1fr 250px; gap: 20px; align-items: center; }
+        h1 { color: #1E4D8C; margin-top: 0; font-size: 1.8em; }
+        ul { list-style: none; padding: 0; margin: 10px 0; }
+        li { margin-bottom: 6px; font-weight: bold; font-size: 1em; }
+        li::before { content: "✔"; color: #27ae60; margin: 20px auto 0; }
+        
+        .imagem-rota { width: 100%; border-radius: 15px; }
+        
+        .btn-prosseguir { display: inline-block; padding: 12px 25px; background: #27ae60; color: white; border-radius: 10px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .btn-prosseguir:hover { background: #219150; transform: scale(1.02); }
+    </style>
+</head>
+<body>
+<div style="text-align: center; margin-top: 10px; margin-bottom: 5px;">
+        
+       <a href="miss%C3%A3o3.html" style="text-decoration: none; background-color: #343a40; color: #ffffff; padding: 5px 15px; border-radius: 4px; font-size: 12px; border: 1px solid white;">← Voltar para a Missão 3</a>
+    </div>
+<div class="container">
+    <div class="header">
+        <div class="header-top">
+            <img src="../05. Imagens/logos/logo-escola.jpeg" class="logo">
+            <div class="titulo-container">
+                <h1 style="margin: 0;">Excelente!</h1>
+            </div>
+            <img src="../05. Imagens/logos/logojornada.jpeg" class="logo">
+        </div>
+        <div class="barra-progresso">JORNADA CONCLUÍDA</div>
+    </div>
+
+    <div class="card">
+        <div>
+            <h1 style="font-size: 1.5em;">Missão 3 finalizada</h1>
+            <p>Você esboçou os primeiros <strong>pontos de parada</strong> do bimestre:</p>
+            <ul>
+                <li>Estratégias de verificação que serão utilizadas na aula</li>
+                <li>Possíveis ajustes de percurso, a depender das respostas dos alunos</li>
+            </ul>
+         <a href="Tela%20final%20da%20Jornada.html" class="btn-prosseguir">FINALIZAR JORNADA ➔</a>
+        </div>
+        <div>
+            <img src="../05. Imagens/ilustrações/ANOTAÇÃO.jpg" class="imagem-rota" alt="Anotação">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

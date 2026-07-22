@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta das Jornadas</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f2f2f2; padding: 20px; }
+        .container { max-width: 1000px; margin: auto; background: white; padding: 40px; border-radius: 8px; }
+        h1 { color: #2c3e50; }
+        .identificacao { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+        select { width: 100%; padding: 10px; }
+        button { width: 100%; margin-top: 20px; padding: 15px; background: #2980b9; color: white; border: none; cursor: pointer; font-size: 16px; }
+        .resultado { margin-top: 25px; padding: 20px; background: #f8f9fa; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+<div style="text-align: center; margin-top: 15px; margin-bottom: 15px;">
+       <a href="javascript:history.back()" style="...">← Voltar</a>
+    </div>
+<div class="container">
+    <h1>CONSULTA DAS JORNADAS</h1>
+    <p>Selecione professor, componente curricular e turma para localizar as fichas preenchidas.</p>
+
+    <div class="identificacao">
+        <select id="prof">
+            <option value="">Professor(a)</option>
+            <option>Caroline</option><option>Dante</option><option>Débora</option>
+            <option>Francisca</option><option>Gleison</option><option>Haron</option>
+            <option>Jayssa</option><option>Marisa</option><option>Michelle</option>
+            <option>Regiane</option><option>Rejane</option><option>Sabrina</option>
+        </select>
+        <select id="comp">
+            <option value="">Componente Curricular</option>
+			<option>Liderança e Oratória
+</option>
+            <option>Arte</option><option>Biologia</option><option>Educação Física</option>
+            <option>Filosofia</option><option>Física</option><option>Geografia</option>
+            <option>História</option><option>Inglês</option><option>Língua Portuguesa</option>
+            <option>Matemática</option><option>Química</option><option>Sociologia</option>
+			<option>Liderança e Oratória
+</option><option>Matemática Aplicada a Administração</option>
+<option>Introdução a Administração e Legislação de Pessoas</option>
+<option>Carreira e Competencia ao Mercado de Trabalho</option>
+<option>Marketing Estratégico</option>
+<option>Comunicação Empresarial</option>
+<option>Gestão Financeira e Contabilidade</option>
+<option>Projeto Multidisciplinar</option>
+<option>Gestão de Operações</option>
+<option>Inovação e desenvolvimento de Negócios</option>
+        </select>
+        <select id="turma">
+            <option value="">Turma</option>
+            <option>1ª A</option><option>1ª B</option><option>2ª A</option>
+            <option>2ª B</option><option>3ª A</option><option>3ª B</option>
+        </select>
+    </div>
+
+    <button onclick="buscarJornada()">Buscar Jornada</button>
+
+    <div class="resultado"><b>Nenhuma busca realizada.</b></div>
+    
+</div>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+    import { getFirestore, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyCFDIAUqMApNoAkzmx-lZFFnIXUVrFNaS0",
+        authDomain: "jornada-da-aprendizagem.firebaseapp.com",
+        projectId: "jornada-da-aprendizagem",
+        storageBucket: "jornada-da-aprendizagem.firebasestorage.app",
+        messagingSenderId: "117617967349",
+        appId: "1:117617967349:web:d456181a57292a19a485bc",
+        measurementId: "G-ZTSNG3CXBX"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    let resultadosCache = {};
+
+    // Expondo as funções para o navegador encontrar
+    window.buscarJornada = buscarJornada;
+    window.abrirFicha = abrirFicha;
+
+  
+
+    async function buscarJornada() {
+        const prof = document.getElementById("prof").value;
+        const comp = document.getElementById("comp").value;
+        const turma = document.getElementById("turma").value;
+
+      document.querySelector(".resultado").innerHTML = "Carregando...";
+        resultadosCache = {};
+
+        // Começa a busca na coleção "fichas"
+        let qRef = collection(db, "fichas");
+        
+        // Adiciona filtros apenas se o campo tiver sido selecionado
+        let conditions = [];
+        if (prof) conditions.push(where("prof", "==", prof));
+        if (comp) conditions.push(where("comp", "==", comp));
+        if (turma) conditions.push(where("turma", "==", turma));
+
+        // Faz a consulta combinando os filtros (se não houver filtros, busca tudo)
+        const q = query(qRef, ...conditions);  
+
+   try {
+            const querySnapshot = await getDocs(q);
+            if (querySnapshot.empty) {
+                document.querySelector(".resultado").innerHTML = "Nenhuma ficha encontrada.";
+                return;
+            }
+
+            let htmlLista = "<h3>Resultados:</h3>";
+            querySnapshot.forEach((doc) => {
+                resultadosCache[doc.id] = doc.data();
+                htmlLista += `<div><b>${doc.data().ficha}</b> - ${doc.data().data || ""} <button onclick="window.open('visualizador.html?id=${doc.id}')">Ver para Impressão</button></div><hr>`;
+            });
+
+            document.querySelector(".resultado").innerHTML = htmlLista;
+        } catch (e) {
+            console.error(e);
+            document.querySelector(".resultado").innerHTML = "Erro na busca.";
+        }
+    }
+</script>
+</body>
+</html>

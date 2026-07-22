@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Terceira missão: Desenhando pontos de parada</title>
+    <style>
+        body { background: #1E4D8C; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; }
+        .container { max-width: 1100px; margin: auto; }
+        
+        .topo { background: white; padding: 20px; border-radius: 20px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .logo { height: 80px; } 
+        
+        .conteudo { display: grid; grid-template-columns: 1fr 350px; gap: 20px; }
+        .card { background: white; padding: 40px; border-radius: 20px; text-align: justify; }
+        
+        .botoes-laterais { display: flex; flex-direction: column; justify-content: center; gap: 15px; }
+        
+        /* Altura fixa para TODOS os botões */
+        .btn { height: 85px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 10px; font-weight: bold; text-decoration: none; transition: 0.3s; }
+        
+        .btn-laranja { background: #f39c12; color: white; }
+        .btn-laranja:hover { background: #e67e22; transform: scale(1.02); }
+        
+        .botoes-base { display: flex; gap: 10px; }
+        
+        /* Biblioteca e Avançar usando a mesma altura .btn */
+        .btn-biblioteca { background: white; border: 2px solid #1E4D8C; color: #1E4D8C; flex: 1; }
+        .btn-biblioteca:hover { background: #f0f0f0; transform: scale(1.02); }
+        
+        .btn-avancar { background: #27ae60; color: white; flex: 1; }
+        .btn-avancar:hover { background: #219150; transform: scale(1.02); }
+    </style>
+</head>
+<body>
+<div style="text-align: center; margin-top: 15px; margin-bottom: 15px;">
+        <a href="conclus%C3%A3o%20da%20miss%C3%A3o%202.html" style="text-decoration: none; background-color: #343a40; color: #ffffff; padding: 5px 15px; border-radius: 4px; font-size: 12px; border: 1px solid white;">← Voltar para a Conclusão da Missão 2</a>
+    </div>
+<div class="container">
+    <div class="topo">
+        <img src="../05. Imagens/logos/logo-escola.jpeg" class="logo">
+        <div style="text-align: center;">
+            <h1 style="color: #1E4D8C; margin: 0;">Terceira Missão: Desenhando pontos de parada</h1>
+            <p style="color: #666; margin: 0; font-style: italic;">"O percurso exige pausas estratégicas: verificar para ajustar e garantir a aprendizagem."</p>
+        </div>
+        <img src="../05. Imagens/logos/logojornada.jpeg" class="logo">
+    </div>
+
+    <div class="conteudo">
+        <div class="card">
+            <p>Mochila pronta e rota traçada: agora é hora de garantir que ninguém fique para trás. A Terceira Missão convida você a planejar suas <strong>paradas estratégicas</strong> ao longo do semestre.</p>
+            <p>Nesta etapa, o foco será:</p>
+            <ul>
+                <li><strong>Monitoramento Ativo:</strong> Desenvolver mecanismos para verificar a aprendizagem a cada aula, sem depender apenas de avaliações externas.</li>
+                <li><strong>Ajuste de Rota:</strong> Utilizar as informações das paradas para realizar intervenções imediatas e adaptar o ritmo das aulas.</li>
+                <li><strong>Cultura de Verificação:</strong> Identificar avanços e dificuldades em tempo real, garantindo a consolidação diária do aprendizado.</li>
+            </ul>
+            <p>Sua atuação é fundamental para transformar a verificação em um guia para o sucesso do estudante. Vamos em frente?</p>
+        </div>
+
+        <div class="botoes-laterais">
+            <a href="ficha5.html" class="btn btn-laranja">
+                PLANEJANDO PARADAS<br>
+                <span style="font-size: 0.8em; font-weight: normal;">(FICHA 5)</span>
+            </a>
+            
+            <div class="botoes-base">
+                <a href="biblioteca.html" class="btn btn-biblioteca">⊞ BIBLIOTECA</a>
+                <a href="conclus%C3%A3o%20da%20miss%C3%A3o%203.html" class="btn btn-avancar">AVANÇAR →</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
