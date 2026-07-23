@@ -73,7 +73,6 @@
 <div class="login-box">
     <!-- Logotipos Escola e Jornada -->
     <div class="logo-container">
-        <!-- Caminho ajustado para quem está na raiz buscar na pasta de imagens -->
         <img src="05. Imagens/logos/logo-escola.jpeg" alt="Logo Escola">
         <img src="05. Imagens/logos/logojornada.jpeg" alt="Logo Jornada"> 
     </div>
@@ -81,35 +80,80 @@
     <h1>Jornada da Aprendizagem</h1>
     <p>Identifique-se para acessar o seu percurso formativo.</p>
     
-    <!-- Redireciona para a página principal dentro da pasta 'Telas' -->
-    <form onsubmit="event.preventDefault(); salvarLogin();">
-    <select name="professor" id="professor" class="seu-estilo-input" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;">
-        <option value="" disabled selected>Selecione seu nome</option>
-        <option value="Carol">Carol</option>
-        <option value="Dante">Dante</option>
-        <option value="Débora">Débora</option>
-        <option value="Emerson">Emerson</option>
-        <option value="Flávio">Flávio</option>
-        <option value="Francisca">Francisca</option>
-        <option value="Gleison">Gleison</option>
-        <option value="Haron">Haron</option>
-        <option value="Jayssa">Jayssa</option>
-        <option value="Marisa">Marisa</option>
-        <option value="Michelle">Michelle</option>
-        <option value="Regiane">Regiane</option>
-        <option value="Sabrina">Sabrina</option>
-        <option value="Visitante">Acesso Visitante</option>
-    </select> 
-    <button type="submit" class="btn-entrar">ENTRAR</button>
-</form>
+    <form onsubmit="event.preventDefault(); verificarESalvarLogin();">
+        <select name="professor" id="professor" class="seu-estilo-input" required onchange="controlarCampoSenha()" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 10px;">
+            <option value="" disabled selected>Selecione seu nome</option>
+            <option value="Carol">Carol</option>
+            <option value="Dante">Dante</option>
+            <option value="Débora">Débora</option>
+            <option value="Emerson">Emerson</option>
+            <option value="Flávio">Flávio</option>
+            <option value="Francisca">Francisca</option>
+            <option value="Gleison">Gleison</option>
+            <option value="Haron">Haron</option>
+            <option value="Jayssa">Jayssa</option>
+            <option value="Marisa">Marisa</option>
+            <option value="Michelle">Michelle</option>
+            <option value="Regiane">Regiane</option>
+            <option value="Rejane">Rejane</option>
+            <option value="Sabrina">Sabrina</option>
+            <option value="Visitante">Acesso Visitante</option>
+        </select> 
 
-<script>
-    function salvarLogin() {
-        const nomeProfessor = document.getElementById("professor").value;
-        localStorage.setItem("nomeProfessor", nomeProfessor);
-        window.location.href = "03. Telas/Tela principal da plataforma.html";
-    }
-</script>
+        <!-- Campo de Senha -->
+        <input type="password" id="senha" placeholder="Digite sua senha">
+
+        <button type="submit" class="btn-entrar">ENTRAR</button>
+    </form>
+
+    <script>
+        // Tabela de Senhas dos Professores
+        const senhasProfessores = {
+            "Carol": "caroljuliofortes",
+            "Dante": "dantejuliofortes",
+            "Débora": "deborajuliofortes",
+            "Emerson": "emersonjuliofortes",
+            "Flávio": "flaviojuliofortes",
+            "Francisca": "franciscajuliofortes",
+            "Gleison": "gleisonjuliofortes",
+            "Haron": "haronjuliofortes",
+            "Jayssa": "jayssajuliofortes",
+            "Marisa": "marisajuliofortes",
+            "Michelle": "michellejuliofortes",
+            "Regiane": "regianejuliofortes",
+            "Rejane": "rejanejuliofortes",
+            "Sabrina": "sabrinajuliofortes"
+        };
+
+        // Esconde o campo de senha se escolher Visitante
+        function controlarCampoSenha() {
+            const nomeProfessor = document.getElementById("professor").value;
+            const campoSenha = document.getElementById("senha");
+
+            if (nomeProfessor === "Visitante") {
+                campoSenha.style.display = "none";
+                campoSenha.required = false;
+                campoSenha.value = "";
+            } else {
+                campoSenha.style.display = "block";
+                campoSenha.required = true;
+            }
+        }
+
+        // Valida a senha antes de redirecionar
+        function verificarESalvarLogin() {
+            const nomeProfessor = document.getElementById("professor").value;
+            const senhaDigitada = document.getElementById("senha").value.trim().toLowerCase();
+
+            if (nomeProfessor === "Visitante" || senhasProfessores[nomeProfessor] === senhaDigitada) {
+                localStorage.setItem("nomeProfessor", nomeProfessor);
+                window.location.href = "03. Telas/Tela principal da plataforma.html";
+            } else {
+                alert("❌ Senha incorreta! Tente novamente.");
+                document.getElementById("senha").value = "";
+            }
+        }
+    </script>
 </div>
 
 </body>
