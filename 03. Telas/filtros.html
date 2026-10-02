@@ -31,8 +31,8 @@
         </div>
       </div>
 
-      <!-- BOTÃO DE VOLTAR PARA A BIBLIOTECA -->
-      <a href="dados_aprendizagem.html" class="inline-flex items-center gap-2 bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold py-2.5 px-4 rounded-xl transition-all text-sm h-fit">
+      <!-- BOTÃO DE VOLTAR CORRIGIDO (Usa histórico sem criar loops) -->
+      <a href="javascript:history.back()" class="inline-flex items-center gap-2 bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold py-2.5 px-4 rounded-xl transition-all text-sm h-fit">
         ← Voltar
       </a>
     </div>
@@ -46,6 +46,7 @@
       <select id="selectBimestre" onchange="atualizarOpcoesTurma()" class="w-full p-2.5 border rounded-lg bg-slate-50 focus:ring-2 focus:ring-blue-500 outline-none">
         <option value="1">1º Bimestre</option>
         <option value="2">2º Bimestre</option>
+        <option value="3">3º Bimestre</option>
       </select>
     </div>
 
@@ -189,9 +190,14 @@
       const abas = Object.keys(workbookData);
 
       abas.forEach(sheetName => {
-        const eSegundoBim = sheetName.toLowerCase().includes('2 bim') || sheetName.toLowerCase().includes('2bim');
-        
-        if ((bim === '1' && !eSegundoBim) || (bim === '2' && eSegundoBim)) {
+        // ignora abas vazias (ex.: Plan7)
+        if (!workbookData[sheetName] || workbookData[sheetName].length === 0) return;
+
+        // Aba com "2 bim" / "3 bim" no nome (maiúscula/minúscula e espaços não importam); sem indicação = 1º bimestre
+        const m = sheetName.match(/(\d)\s*bim/i);
+        const bimDaAba = m ? m[1] : '1';
+
+        if (bimDaAba === bim) {
           const opt = document.createElement('option');
           opt.value = sheetName;
           opt.textContent = sheetName;
